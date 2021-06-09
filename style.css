@@ -354,10 +354,26 @@ aside {
     background-color: var(--grey-page-bg);
     padding: 8px 32px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 .code-overview{
     color: var(--white);
+}
+
+pre{
+    overflow: scroll;
+    height: 40vh;
+}
+.code-example{
+    color: var(--white);
+}
+
+.code-action{
+    cursor: pointer;
+    margin: 0px 5px;
 }
 /*Buttons*/
 .btn{
@@ -496,3 +512,5 @@ aside {
   .tooltip-close{
       display: flex;
   }
+
+  

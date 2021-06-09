@@ -11,9 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Moliri library</title>
 
-    <!-- other content of the head element goes here -->
-	<link rel="stylesheet" type="text/css" href="prism.css">
-	<script src="js/prism.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/dark.min.css">
+	
 </head>
 <body onhashchange="pageChange()">
     <div class="container">
@@ -86,23 +85,8 @@
                     <div class="section-content"></div>
                 </section>
                 <section class="code">
-                    <pre>
-                        <code class="language-css">
-                            <!DOCTYPE html>
-                            <html lang="en-GB">
-                            <head>
-                                <title>Home</title>
-                                <meta charset="utf-8">
-                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                <link rel="stylesheet" type="text/css" href="main.css">
-                            </head>
-                            <body>
-                                <h1>My nature and wildlife blog</h1>
-                                <img src="tree.jpg" alt="Tree" class="photo"/>
-                            </body>
-                            </html>
-                        </code>
-                    </pre>
+                    
+                        <div class="codechuj"></div>
                 </section>
                 <div class="tooltip"></div>
             </main>
@@ -123,5 +107,8 @@
     <script src="js/main.js"></script>
     <!-- dark mode js file -->
     <script src="js/darkmode.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
 </body>
 </html>

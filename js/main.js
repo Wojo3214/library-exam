@@ -262,7 +262,7 @@ function appendState(id){
                 <div class="component-information">
                     <p class="component-name">${specificState.name}</p>
                     <div class="icons">
-                        <img src="icons/code.svg" class="icons-item" alt="Show code" onclick="openCodePanel()">
+                        <img src="icons/code.svg" class="icons-item" alt="Show code" onclick="openCodePanel('${specificState.name}')">
                         <img src="icons/info.svg" class="icons-item" alt="Show additional information">
                     </div>
                 </div>
@@ -299,16 +299,29 @@ function openCodePanel(name, code){
     <header class="code-header">
         <h4>${name}</h4>
         <div class="icons">
-
+            <div class="code-action-icons">
+                <img src="img/activity.svg" class="code-action" alt="copy icon">
+                <a href="https://github.com/Wojo3214/library-exam" target="_blank"><img src="img/github.svg" class="code-action" alt="github icon"></a>
+            </div>
+            <img src="img/x.svg" class="code-action" alt="x icon" onclick="closeCodePanel()">
         </div>
     </header>
-    <div class="code-overview">
-        <p>${code}</p>
+    <div class="code-example">
+    <pre><code class="html">
+        &lt;button class=&quotbtn primary&quot&gt;${name}&lt;/button&gt;
+                
+        </code>
+    </pre>
     </div>`;
 
     document.querySelector(".code").innerHTML = htmlTemplateCode;
 }
 
+function closeCodePanel(){
+    let codeContainer = document.querySelector(".code");
+    codeContainer.style.display = "none";
+    codeContainer.style.bottom = "0px";
+}
 
 //Copy to clipboard function
 function copyToClipboard(hexcode) {
