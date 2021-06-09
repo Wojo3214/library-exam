@@ -141,6 +141,7 @@ function appendGeneral(section){
             </article>
         `
         }
+
     }
 
     document.querySelector(".general-content").innerHTML = htmlTemplate;
@@ -261,7 +262,7 @@ function appendState(id){
                 <div class="component-information">
                     <p class="component-name">${specificState.name}</p>
                     <div class="icons">
-                        <img src="icons/code.svg" class="icons-item" alt="Show code">
+                        <img src="icons/code.svg" class="icons-item" alt="Show code" onclick="openCodePanel()">
                         <img src="icons/info.svg" class="icons-item" alt="Show additional information">
                     </div>
                 </div>
@@ -286,7 +287,7 @@ function appendState(id){
 function showSourceCode(toShow){
     sourceCode.value = toShow.innerHTML;
 }
-
+*/
 function openCodePanel(name, code){
     console.log(name, code);
     let codeContainer = document.querySelector(".code");
@@ -307,7 +308,7 @@ function openCodePanel(name, code){
 
     document.querySelector(".code").innerHTML = htmlTemplateCode;
 }
-*/
+
 
 //Copy to clipboard function
 function copyToClipboard(hexcode) {
@@ -357,4 +358,11 @@ function noResults() {
          <p class="no-results-info">Sorry, we couldn't find this for you!</p>
     `;
     document.querySelector(".results").innerHTML = template;
+}
+
+//Open tooltip with dark mode
+function openTooltip(){
+    let tooltip = document.querySelector(".tooltip-open");
+    tooltip.classList.toggle("tooltip-close");
+    console.log("clicked profile img");
 }
