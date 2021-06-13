@@ -293,6 +293,7 @@ function openCodePanel(name, code){
     let codeContainer = document.querySelector(".code");
     codeContainer.style.display = "block";
     codeContainer.style.bottom = "0px";
+    let btnCode = `&lt;button class=&quotbtn primary&quot&gt;${name}&lt;/button&gt;`;
 
     let htmlTemplateCode = "";
     htmlTemplateCode = `
@@ -300,7 +301,7 @@ function openCodePanel(name, code){
         <h4>${name}</h4>
         <div class="icons">
             <div class="code-action-icons">
-                <img src="img/activity.svg" class="code-action" alt="copy icon">
+                <img src="img/activity.svg" class="code-action" onclick="copyCodeToClipboard('${btnCode}')" alt="copy icon">
                 <a href="https://github.com/Wojo3214/library-exam" target="_blank"><img src="img/github.svg" class="code-action" alt="github icon"></a>
             </div>
             <img src="img/x.svg" class="code-action" alt="x icon" onclick="closeCodePanel()">
@@ -325,14 +326,29 @@ function closeCodePanel(){
 
 //Copy to clipboard function
 function copyToClipboard(hexcode) {
-    var hex = hexcode;
-    var elem = document.createElement("textarea");
+    let hex = hexcode;
+    let elem = document.createElement("textarea");
     document.body.appendChild(elem);
     elem.value = hex;
     elem.select();
     document.execCommand("copy");
     document.body.removeChild(elem);
     tooltipSuccess(elem.value);
+    //alert("Copied the text: " + elem.value);
+}
+
+//Copy to clipboard function
+function copyCodeToClipboard(code) {
+    console.log(code);
+    let copyCode = code;
+    let elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = copyCode;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+    tooltipSuccess("");
+    
     //alert("Copied the text: " + elem.value);
 }
 
